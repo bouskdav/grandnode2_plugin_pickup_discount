@@ -1,0 +1,1 @@
+# grandnode2_plugin_pickup_discount
