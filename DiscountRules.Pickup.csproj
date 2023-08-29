@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <Import Project="..\..\Build\Grand.Common.props" />
+  <PropertyGroup>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Web\Grand.Web\Plugins\DiscountRules.Pickup</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Web\Grand.Web\Plugins\DiscountRules.Pickup</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <RemoveDir Directories="..\..\Web\Grand.Web\Plugins\DiscountRules.Pickup\refs" />
+    <RemoveDir Directories="..\..\Web\Grand.Web\Plugins\DiscountRules.Pickup\ref" />
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Grand.Domain\Grand.Domain.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Grand.Infrastructure\Grand.Infrastructure.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Grand.SharedKernel\Grand.SharedKernel.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web\Grand.Web.Common\Grand.Web.Common.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+	<ProjectReference Include="..\..\Business\Grand.Business.Core\Grand.Business.Core.csproj">
+	  <Private>false</Private>
+	</ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>   
+  </ItemGroup>
+
+</Project>
