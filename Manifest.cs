@@ -5,7 +5,6 @@ using Grand.Infrastructure.Plugins;
     FriendlyName = "100 CZK discount on pickup",
     Group = "Discount requirements",
     SystemName = "DiscountRules.Pickup",
-    SupportedVersion = GrandVersion.SupportedPluginVersion,
     Author = "Laguna Solutions",
     Version = "1.0.0"
 )]
